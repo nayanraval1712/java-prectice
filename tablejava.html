@@ -17,19 +17,18 @@
           <div class="card-header">
             <h1>Multiplication Table</h1>
           </div>
-        
-            <div class="card-body">
-             <form onsubmit="return Getcall();">
+
+          <div class="card-body">
+            <form onsubmit="return Getcall();">
               <div class="mb-3">
                 <label for="number" class="form-label">Enter Your Table
                 </label>
                 <input type="number" class="form-control" id="num1" placeholder="Enter Your Table" />
               </div>
-             </form>
+            </form>
 
-              <button type="submit" class="btn btn-primary">Enter</button>
-            </div>
-          
+            <button type="submit" class="btn btn-primary">Enter</button>
+          </div>
 
           <div class="row" id="data" class="mb-5"></div>
         </div>
@@ -44,15 +43,13 @@
       // alert("hello nayan");
       let num1 = document.getElementById("num1").value;
       console.log(num1);
-      let ans=''
-      let no = 1
-      for(no=1;no<=10;no++)
-      {
-        ans=num1*no;
+      let ans = "";
+      let no = 1;
+      for (no = 1; no <= 10; no++) {
+        ans = num1 * no;
         console.log(ans);
-
       }
-    
+
       return false;
     }
   </script>
