@@ -30,9 +30,14 @@
             <button type="submit" class="btn btn-primary">Enter</button>
           </div>
 
-          <div class="row" id="data" class="mb-5"></div>
+          <div class="row" id="data" class="mb-5">
+            
+          </div>
         </div>
       </div>
+    </div>
+    <div class="row" id="card" class="col-4 mb-3">
+
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -45,9 +50,55 @@
       console.log(num1);
       let ans = "";
       let no = 1;
+      var card=''
       for (no = 1; no <= 10; no++) {
         ans = num1 * no;
         console.log(ans);
+       
+        
+        let table = ''
+            while (num1 <= no) {
+                table += `
+                <div class="col-xl-3 col-sm-12 col-md-6 col-lg-4 mt-5">
+                <div class="card">
+                    <div class="card-header text-center text-bg-success">
+                        Table Of ${no}
+                      </div>`
+                //   let column = 1;
+                // while (column <= colcount) {
+                let ans = 0;
+                let num = 1;
+                ans = num1 * num;
+                while (num<=10) {ans = no * num;
+                    table += `<div class="card-body text-center">
+                       ${no} X ${num}= ${ans}
+                     </div>`;
+                     num++
+                }
+
+                //     column++;
+                // }
+                table += ` </div>
+                </div>`;
+                num1++
+            }
+            document.getElementById("card").innerHTML = table;
+
+      //           while (num<=10) {
+      //             ans = num1 * no;
+      //               card += `<div class="card-body text-center">
+      //                  ${num1} X ${n0}= ${ans}
+      //                </div>`;
+      //                num++
+      //           }
+      // {  var card =`<div class="col-4 mb-3">
+      //                   <div class="card">
+      //                       <div class="card-header">${num1} x ${no}</div>
+      //                       <div class="card-body"></div>
+      //                   </div>
+      //               </div>`;}
+                    document.getElementById("num1").value = '';
+                    // document.getElementById("output").innerHTML += card;
       }
 
       return false;
