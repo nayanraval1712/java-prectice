@@ -1,103 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <title>Loop Form</title>
-</head>
-<body>
 
-<div class="container-fluid mt-5">
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card">
-                <div class="card-header text-bg-primary">
-                    <h5 class="card-title">Loop Form</h5>
-                </div>
-                <div class="card-body">
-                    <form onsubmit="return GenerateTable();">
-                        <div class="mb-3">
-                            <label for="rowcount" class="form-label">Number of Rows:</label>
-                            <input type="number" class="form-control" id="rowcount" name="rowcount" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="colcount" class="form-label">Number of Columns:</label>
-                            <input type="number" class="form-control" id="colcount" name="colcount" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Loop Type:</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="loop" id="whileLoop" value="while" required>
-                                <label class="form-check-label" for="whileLoop">
-                                    While Loop
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h1>Multiplication Table</h1>
+                    </div>
+
+                    <div class="card-body">
+                        <form onsubmit="return Getcall()">
+                            <div class="mb-3">
+                                <label for="number" class="form-label">Enter Your Table
                                 </label>
+                                <input type="number" class="form-control" id="num1" placeholder="Enter Your Table" />
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="loop" id="forLoop" value="for" required>
-                                <label class="form-check-label" for="forLoop">
-                                    For Loop
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="loop" id="doWhileLoop" value="dowhile" required>
-                                <label class="form-check-label" for="doWhileLoop">
-                                    Do-While Loop
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Generate Loop</button>
-                    </form>
+                            <button type="submit" class="btn btn-primary">Enter</button>
+                        </form>
+                    </div>
+
+
                 </div>
             </div>
         </div>
-        <div class="col-lg-9">
-            <table class="table table-striped" width="100%" id="output">
-               
-            </table>
+        <div class="row mt-3">
+            <div class="col-3" id="data">
+                <!-- <div class="card" >
+                    <div class="card-header">
+                        table of 3 
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <td>3*1=3</td>
+                            </tr>
+                            <tr>
+                                <td>3*1=3</td>
+                            </tr>
+                            <tr>
+                                <td>3*1=3</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div> -->
+            </div>
         </div>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    function GenerateTable()
-    {
-        // alert("hi");
-        //create variables to store user given input 
-        let rowcount = document.getElementById("rowcount").value;
-        let colcount = document.getElementById("colcount").value;
-        let loop = document.querySelector("input[name='loop']:checked").value;
-        console.log(rowcount,colcount,loop);
-        //if else if ladder decision making statement 
-        let message = '';
-        if(loop === "while")
-        {
-            console.log("it is while loop");
-            let row =  1;
-            while(row<=rowcount)
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function Getcall() {
+            // alert("hello nayan");
+            let num1 = document.getElementById("num1").value;
+            console.log(num1);
+
+            table=`<div class="card" >
+                    <div class="card-header">
+                        table of ${num1} 
+            </div>`
+            
+            let no=1;
+            let ans=0;
+            while (no<=10 )
             {
-                message += `<tr>`
-                let column =1;
-                while(column<=colcount)
-                {
-                    message += `<td>${column}</td>`;    
-                    column++;
-                } 
-                message += `</tr>`;
-                row++; //row = row + 1
+                ans=num1*no
+                table+=`<div class="card-body">
+                        <table>
+                            <tr>
+                                <td>${num1}X${no}=${ans}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>`
+                no++;
             }
+            document.getElementById("data").innerHTML = table
+            
+            return false;
         }
-        else if(loop === "for")
-        {
-            console.info("it is for loop");
-        }
-        else if (loop === "dowhile")
-        {
-            console.error("it is do while loop");
-        }
-        document.getElementById("output").innerHTML = message;
-        return false;
-    }
-</script>
+    </script>
 </body>
+
 </html>
