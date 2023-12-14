@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            text-align: center;
+            }
+            .zoom-in{
+                height: 200px;
+                width: 200px;
+                box-shadow: 10px 10px 10px 10px #bbbbbb;
+                transform: scale(2.2); /* Zoom in effect on hover */
+                /* transform: scale3d(5.2); */
+             
+
+            }
+            .zoom-out{
+                height: 200px;
+                width: 200px;
+                box-shadow: none;
+                /* transition: transform 0.5s ease; */
+                
+
+            }
+    </style>
+    <script>
+        let ZoomIn = function(ImageId)
+        {
+            console.log("Zoom in "+ ImageId);
+            document.getElementById(ImageId).className = "zoom-in";
+        }
+        let ZoomOut = function(ImageId)
+        {
+            console.log("Zoom out "+ ImageId);
+            document.getElementById(ImageId).className = "zoom-out";
+        }
+
+    </script>
+</head>
+<body>
+    <table border="1" cellpadding="10" width="100%">
+        <tr>
+            <td><img id="1" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=1" alt=""></td>
+            <td><img id="2" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=2" alt=""></td>
+            <td><img id="3" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=3" alt=""></td>
+        </tr>
+        <tr>
+            <td><img id="4" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=4" alt=""></td>
+            <td><img id="5" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=5" alt=""></td>
+            <td><img id="6" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=6" alt=""></td>
+        </tr> 
+         <tr>
+            <td><img id="7" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=7" alt=""></td>
+            <td><img id="8" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=8" alt=""></td>
+            <td><img id="9" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=9" alt=""></td>
+        </tr>
+
+    </table>
+</body>
+</html>
