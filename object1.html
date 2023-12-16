@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 align="center">Creat a Object 1 example and 1st method</h1>
+    <H3 align="center"> You Get you Ans in consol </H3>
+
+    <script>
+      // explain method 1
+
+      var calculation = {
+        // property  vareables
+        number1: prompt("number1"),
+        number2: prompt("number2"),
+
+        // method
+        add: function () {
+          // let result is local veriable
+          let result = this.number1 + this.number2;
+          console.log("addition  ", result);
+        },
+        sub: function () {
+          let result = this.number1 - this.number2;
+          console.log("Substration  ", result);
+        },
+        multy: function () {
+          let result = this.number1 * this.number2;
+          console.log("multyplication   ", result);
+        },
+        div : function(){
+            let result = this.number1 / this.number2 ;
+            console.log("Devision  " ,result)
+        }
+      };
+    //   calculation.number1 = 100;
+    //   calculation.number2 = 100;
+
+      calculation.add();
+      calculation.sub();
+      calculation.multy();
+      calculation.div();
+    </script>
+  </body>
+</html>

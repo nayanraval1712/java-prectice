@@ -1,37 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Image Hover in Middle</title>
+  <title>Scroll Pagination</title>
   <style>
     #imageContainer {
-      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       margin-top: 50px;
     }
-    #mainImage {
-      width: 300px;
-      height: auto;
-      transition: transform 0.3s ease; /* Adding transition for smooth hover effect */
+    .image-item {
+      margin: 10px;
     }
-    #imageContainer:hover #mainImage {
-      transform: scale(1.2); /* Zoom in effect on hover */
+    .image-item img {
+      width: 200px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    .image-item img:hover {
+      transform: scale(1.2);
+    }
+    .loader {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
     }
   </style>
 </head>
 <body>
 
 <div id="imageContainer">
-  <img id="mainImage" src="https://picsum.photos/200?random=1" />
+  <!-- Images will be dynamically added here -->
+</div>
+
+<div class="loader" id="loader">
+  Loading...
 </div>
 
 <script>
-  const image = document.getElementById('mainImage');
-  image.addEventListener('mouseover', function() {
-    image.src = 'https://picsum.photos/200?random=1';
-  });
-  image.addEventListener('mouseout', function() {
-    image.src = 'https://picsum.photos/200?random=1';
-  });
+  let pageNumber = 1; // Initial page number
+  let isLoading = false;
+
+  function fetchImages() {
+    const loader = document.getElementById('loader');
+    const imageContainer = document.getElementById('imageContainer');
+
+    // Simulating an API call to fetch images
+    isLoading = true;
+    loader.style.display = 'block'; // Show loader while fetching data
+
+    setTimeout(() => {
+      // Simulating fetching new images
+      for (let i = 1; i <= 5; i++) {
+        const newImage = document.createElement('div');
+        newImage.classList.add('image-item');
+        newImage.innerHTML = `<img src="https://picsum.photos/200${pageNumber * 5 + i}.jpg" />`;
+        imageContainer.appendChild(newImage);
+      }
+
+      pageNumber++; // Increment page number for next fetch
+      isLoading = false;
+      loader.style.display = 'none'; // Hide loader after fetching data
+    }, 1000); // Simulating a delay for fetching data (1 second)
+  }
+
+  // Function to check if the user has scrolled to load more images
+  function loadMoreImages() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isLoading) {
+      fetchImages();
+    }
+  }
+
+  window.addEventListener('scroll', loadMoreImages);
+
+  // Initial loading of images
+  fetchImages();
 </script>
 
 </body>
 </html>
+<table border="1" cellpadding="10" width="100%">
+  <tr>
+      <td><img id="1" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=1" alt=""></td>
+      <td><img id="2" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=2" alt=""></td>
+      <td><img id="3" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=3" alt=""></td>
+  </tr>
+  <tr>
+      <td><img id="4" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=4" alt=""></td>
+      <td><img id="5" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=5" alt=""></td>
+      <td><img id="6" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=6" alt=""></td>
+  </tr> 
+   <tr>
+      <td><img id="7" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=7" alt=""></td>
+      <td><img id="8" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=8" alt=""></td>
+      <td><img id="9" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=9" alt=""></td>
+  </tr>
+  <tr>
+      <td><img id="10" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=10" alt=""></td>
+      <td><img id="11" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=11" alt=""></td>
+      <td><img id="12" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=12" alt=""></td>
+  </tr>
+  <tr>
+      <td><img id="13" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=13" alt=""></td>
+      <td><img id="14" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=14" alt=""></td>
+      <td><img id="15" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=15" alt=""></td>
+  </tr> 
+   <tr>
+      <td><img id="16" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=16" alt=""></td>
+      <td><img id="17" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=17" alt=""></td>
+      <td><img id="18" onmouseover="ZoomIn(this.id)"  onmouseleave="ZoomOut(this.id)" src="https://picsum.photos/200?random=18" alt=""></td>
+  </tr>
+
+
+</table>
