@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Example of single level heritance</h1>
+    <hr />
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <script>
+      // Single level heritance
+      class KB {
+        constructor(bytes) {
+          this.bytes = bytes;
+          console.log("Kb is call ...");
+        }
+        getkb() {
+          // Creat a one local veriable for get constuctore valyu byte
+          let temp = this.bytes / 1024;
+          return temp;
+        }
+      }
+
+      class MB extends KB {
+        constructor(bytes){
+            super(bytes); // for call kb call we use super keyword... 
+            console.log("MB is call ...");
+        }
+        getmb(){
+            // Creat a one local veriable for get constuctore valyu byte
+            let temp = super.getkb() /1024;
+            return temp.toFixed(2);
+        }
+      }
+
+      class GB extends KB 
+      {
+        constructor(bytes){
+            super(bytes); 
+            console.log(" GB call....")
+        }
+        getgb(){
+            
+            let temp = super.getkb() /1024;
+            return temp.toFixed(2);
+            
+        }
+      }
+
+      let bytes = parseInt(prompt("enter bytes",0));
+
+    //   creat mb class object 
+    // 2nd method  let object - name = new classname()
+    
+    let m1 = new MB(bytes);
+    let kilobytes =m1.getkb();
+    let megabyte =m1.getmb();
+    let g1 = new GB(bytes)
+    let gegabyte = g1.getgb();
+    document.getElementById("output1").innerHTML="kb = " + kilobytes
+    document.getElementById("output2").innerHTML="mb = " + megabyte
+    document.getElementById("output3").innerHTML="Gb = " + gegabyte
+    </script>
+  </body>
+</html>

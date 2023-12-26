@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3rd method to creat a object 
+
+        function student(name,age,weight,gender){
+            this.name = name,
+            this.age = age,
+            this.weight=weight,
+            this.gender=gender,
+
+            this.display = function(){
+                console.log(this.name , this.age , this.weight ,)
+            }
+        }
+
+        var g1 = new student("nayan" , 15 ,50);
+        g1.display();
+        var g2 = new student("shiva" , 15 ,50);
+        g2.display();
+       
+      
+    </script>
+</body>
+</html>

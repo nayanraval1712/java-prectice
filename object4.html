@@ -11,20 +11,19 @@
       crossorigin="anonymous"
     />
   </head>
-
   <body>
     <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="card">
             <div class="card-body">
-              <table class="table table-bordered table-striped">
+              <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
+                    <th>Product Name</th>
+                    <th>Product Prise</th>
+                    <th>Product Quantity</th>
+                    <th>Total Product Prise</th>
                   </tr>
                 </thead>
                 <tbody id="output"></tbody>
@@ -39,36 +38,36 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="common.js"></script>
+
     <script>
-      //create class using es6 way
-      class Item {
-        constructor(name, price, quantity) {
+      // example of object 4th thatt name es6
+
+      class product {
+        constructor(name, prise, Quantity) {
           this.name = name;
-          this.price = price;
-          this.quantity = quantity;
-          this.total = this.price * this.quantity;
-          console.log("constructor is called....");
+          this.prise = prise;
+          this.Quantity = Quantity;
+          this.total = this.prise * this.Quantity;
+          console.log("hi");
         }
         display() {
-          console.log(this.name, this.price, this.quantity, this.total);
-          let temp = ` <tr>
-                                    <td>${this.name}</td>
-                                    <td>${this.price}</td>
-                                    <td>${this.quantity}</td>
-                                    <td>${this.total}</td>
-                            </tr>`;
-          document.getElementById("output").innerHTML += temp;
+          console.log(this.name, this.prise, this.Quantity, this.total);
+          let temp = ` <td>${this.name}</td>
+                    <td>${this.prise}</td>
+                    <td>${this.Quantity}</td>
+                    <td>${this.total}</td>`
+            document.getElementById("output").innerHTML += temp;
         }
       }
 
-      //create object
-      //var object-name = new classname();
-      var i1 = new Item("Shampoo", 100, 3);
-      i1.display();
-
-      var i2 = new Item("soap", 30, 3);
-      i2.display();
+      var p1 = new product("nayan", 10, 25);
+      p1.display();
+      var p2 = new product("batman", 10, 25);
+      p2.display();
+      var p3 = new product("ironman", 10, 25);
+      p3.display();
+      var p4 = new product("tonnay", 10, 25);
+      p4.display();
     </script>
   </body>
 </html>

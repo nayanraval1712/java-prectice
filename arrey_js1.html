@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Example of arrey</h1>
+    <script>
+      function display(arrey) {
+        console.log(arrey);
+      }
+
+      // 1) numrical arrey ...
+      var number = [0, 1, 2, 3, 4, 5, 6];
+      display(number);
+
+      // 2) string arrey ...
+      var fruites = ["bannana", "apple", "mango", "grapes"];
+      display(fruites);
+
+      // 3) creat empty arrey ...
+      var empty = [];
+      display(empty);
+
+      // 4) add new values in empty arrey ... (its push in end)..
+      empty.push("nayan");
+      empty.push("raval");
+      empty.push("age");
+      empty.push(25);
+      display(empty);
+
+      // 5) add values in starting ...
+      empty.unshift("master");
+      empty.unshift("Mr.");
+      display(empty);
+
+      // 6) removing values form arrey ..
+      // .splice keyword use and in conditio ( index  and , second one is postion ).....
+      empty.splice(0, 1);
+      // empty.splice(0,4);
+      display(empty);
+
+      // 7) chang value ...
+
+      empty[1] = "Nayan";
+      display(empty);
+      // matlab  k apdi index 0 thi start ty che to 0 per hal coad ma master che to apde arrey ma 1 conditin pass kari che to chang e thase
+      // emj apde niche change surname  ma r capital kariye ....
+
+      empty[2] = "Raval";
+      display(empty);
+
+      // 8) creat an empty arrey .....
+      // genrate square ...
+      var squre = [];
+      // using loop for loop (while loop game e situation ma ek var run thase but do while nai e condition statement lop che and for loop ma veriable difine and codtion and enu incremnet decreemnet karva mate ty che ...)
+
+      for (let index = 0; index <= number.length; index++) {
+        console.log(index);
+        squre.push(number[index] * number[index]);
+      }
+      display(squre);
+
+      // genrate qube..use array maping ...
+      var qube = number.map(function (num) {
+        return num * num * num;
+      });
+
+      display(qube);
+    </script>
+  </body>
+</html>

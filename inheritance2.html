@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of inheritance (Hierarchical)</h1>
+    <hr/>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    
+    <script>
+        //Hierarchical inheritance  
+       class MyMath 
+       {
+            getPI()
+            {
+                return 3.14;
+            }
+            getSquare(number)
+            {
+                let temp = number * number;
+                return temp;
+            }
+       }
+       class Circle extends MyMath
+       {
+            constructor(radius)
+            {
+                super(); 
+                this.radius = radius;
+            }
+            getArea()
+            {
+                let area = super.getPI() * super.getSquare(this.radius);
+                return area;
+            }
+       }
+       class Cyliender extends MyMath
+       {
+            constructor(radius,height)
+            {
+                super(); 
+                this.radius = radius;
+                this.height = height;
+            }
+            getSurfaceArea()
+            {
+                //2pirh + 2pirr
+                let surfaceArea = (2 * super.getPI() * this.radius * this.height) + (2 * super.getPI() * super.getSquare(this.radius));
+                return surfaceArea;
+
+            }
+       }
+       var radius = parseInt(prompt("Enter radius"));
+       //create object of circle class
+       var c1 = new Circle(radius);
+       var area = c1.getArea(); 
+       document.getElementById("output1").innerHTML = `Area = ${area}`;
+
+       var height = parseInt(prompt("Enter height"));
+       var c2 = new Cyliender(radius,height);
+
+       var surfaceArea = c2.getSurfaceArea();
+       document.getElementById("output2").innerHTML = `Surface Area = ${surfaceArea}`;
+
+    </script>
+</body>
+</html>
