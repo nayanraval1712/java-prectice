@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center "><h2>creating europion card</h2></div>
+      </div>
+      <div class="row" id="output">
+        
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+
+        // creating function to call value of arrey object 
+
+        function DisplayCountry(item) {
+            // Use document.createElement to create a new element
+            let card = document.createElement('div');
+            card.className= 'col-lg-3 col-md-4 col-sm-6 col-12 mb-3';
+            // Use innerHTML to set the content of the new element
+            card.innerHTML = `<div class="card shadow">
+                <div class="card-header text-bg-primary">
+                    <h3>${item.name}</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Currency: ${item.age}</li>
+                        <li class="list-group-item">Capital: ${item. countery}</li>
+                    </ul>
+                </div>
+            </div>`;
+            // Append the new element to the output element (assuming 'output' is an id)
+            document.getElementById('output').appendChild(card);
+        }
+      // creat arrey of object
+      var countery = [
+        {
+          name: "Nayan",
+          age: 47,
+          countery: "India",
+        },
+        {
+          name: "Brijesh",
+          age: 47,
+          countery: "Germoney",
+        },
+        {
+          name: "Karan",
+          age: 47,
+          countery: "Khopala",
+        },
+        {
+          name: "Jit",
+          age: 47,
+          countery: "Surat",
+        },
+      ];
+      console.log(countery);
+      countery.map(function (item) {
+        DisplayCountry(item) ;
+        })    
+
+    </script>
+  </body>
+</html>

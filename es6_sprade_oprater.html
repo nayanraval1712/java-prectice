@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+
+        // 1) number na veriable ne murg kara 
+        // var number = [ 1 ,2 ,3];
+        // var num = [4 ,5 ,6];
+        // var th = [...number,...num];
+        // console.log(th)
+
+        // 2) we can use also in opraters we copy 
+
+        var myname ={
+            name : 'nayan',
+            age : 25,
+            gender : 'Male'
+        }
+        var item ={
+            carname :'Bmw',
+            age : 235,
+           color: 'black'
+        }
+        var item = {...myname,...item};
+        console.log(item)
+    </script>
+</body>
+</html>

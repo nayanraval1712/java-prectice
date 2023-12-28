@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <!-- reate webpage that will display 10 students' 5 subject marks, total, average. create an array of object. each object has student name and 5 subject marks. display each and every student detail in table format. refer array41_2.html for detail  -->
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                <div class="card ">
+                    <div class="card-body ">
+                        <table class="table text-bg-primary table-strip">
+                            <thead>
+                                <tr>
+                                    <th>Name :</th>
+                                    <th>mark :</th>
+                                </tr>
+                            </thead>
+                            <tbody id="output"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        // creat object for student
+        var student = [
+            {
+                name: "nayan",
+                mark1: 20,
+                mark2: 20,
+                mark3: 20,
+                mark4: 20,
+                mark5: 20,
+            },
+            {
+                name: "brijesh",
+                mark1: 20,
+                mark2: 20,
+                mark3: 20,
+                mark4: 20,
+                mark5: 20,
+            },
+            {
+                name: "karan",
+                mark1: 20,
+                mark2: 20,
+                mark3: 20,
+                mark4: 20,
+                mark5: 20,
+            },
+            {
+                name: "himanshu",
+                mark1: 20,
+                mark2: 20,
+                mark3: 20,
+                mark4: 20,
+                mark5: 20,
+            },
+            {
+                name: "krish",
+                mark1: 20,
+                mark2: 20,
+                mark3: 20,
+                mark4: 20,
+                mark5: 20,
+            },
+        ];
+
+        console.log(student);
+
+        // creat object for output of tr /td in table
+
+        function display(mark) {
+            temp = `    <tr>
+                        <td >
+                            ${mark.name}
+                        </td>  
+                         <td>
+                            
+                        </td>                     
+                    </tr>   
+                    <tr>
+                        <td>
+                            C++ :
+                        </td>  
+                         <td>
+                            ${mark.mark1}
+                        </td>                     
+                    </tr>     
+                    <tr>
+                        <td>
+                            Java Script :
+                        </td>  
+                         <td>
+                            ${mark.mark1}
+                        </td>                     
+                    </tr>     
+                    <tr>
+                        <td>
+                            HTMl : 
+                        </td>  
+                         <td>
+                            ${mark.mark1}
+                        </td>                     
+                    </tr>        
+                    <tr>
+                        <td>
+                            CCC  :
+                        </td>  
+                         <td>
+                           ${mark.mark1}
+                        </td>                     
+                    </tr>        
+                    <tr>
+                        <td>
+                            React.js : 
+                        </td>  
+                         <td>
+                          ${mark.mark1}
+                        </td>                     
+                    </tr>   
+                    <tr>
+                        <td>
+                            total
+                        </td>  
+                         <td>
+                            ${mark.mark1 +
+                mark.mark1 +
+                mark.mark1 +
+                mark.mark1 +
+                mark.mark1
+                }
+                        </td>                     
+                    </tr> 
+                    <tr>
+                        <td>
+                            average
+                        </td>  
+                         <td>
+                            ${mark.mark1 +
+                mark.mark1 +
+                mark.mark1 +
+                mark.mark1 +
+                mark.mark1
+                }/100
+                        </td>                     
+                    </tr>`;
+            document.getElementById("output").innerHTML += temp;
+        }
+
+        student.map(function (mark) {
+            display(mark);
+        });
+    </script>
+</body>
+
+</html>
