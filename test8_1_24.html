@@ -1,0 +1,118 @@
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          td {
+            text-align: center;
+            width: 200px;
+            /* Set the width of your container */
+            height: 200px;
+            /* Set the height of your container */
+            overflow: hidden;
+        }
+        .zoomIn {
+            transition: transform 0.7s ease;
+            transform-origin: center center;
+            /* Set the transformation origin to the center */
+            transform: scale(1.50);
+            /* Zoom in by 50% */
+        }
+        .ZoomOut {
+            transition: transform 0.7s ease;
+            transform-origin: center center;
+            /* Set the transformation origin to the center */
+            transform: scale(1);
+            /* Zoom in by 50% */
+        }   
+    </style>
+</head>
+
+<body>
+    <table align="center" width="100%" cellpadding="" id="output">
+        <tbody><tr>
+            <td><img id="image-1" src="https://picsum.photos/300?random=1" alt="" class="ZoomOut"></td>
+            <td><img id="image-2" src="https://picsum.photos/300?random=2" alt="" class="ZoomOut"></td>
+            <td><img id="image-3" src="https://picsum.photos/300?random=3" alt="" class="ZoomOut"></td>
+        </tr>
+        <tr>
+            <td><img id="image-4" src="https://picsum.photos/300?random=4" alt="" class="ZoomOut"></td>
+            <td><img id="image-5" src="https://picsum.photos/300?random=5" alt="" class="ZoomOut"></td>
+            <td><img id="image-6" src="https://picsum.photos/300?random=6" alt="" class="ZoomOut"></td>
+        </tr>
+        <tr>
+            <td><img id="image-7" src="https://picsum.photos/300?random=7" alt="" class="ZoomOut"></td>
+            <td><img id="image-8" src="https://picsum.photos/300?random=8" alt="" class="ZoomOut"></td>
+            <td><img id="image-9" src="https://picsum.photos/300?random=9" alt="" class="ZoomOut"></td>
+        </tr>
+
+    </tbody></table>
+    <script>
+        //global variable 
+        var count = 10;
+        window.addEventListener("load",function(){
+            // console.log("load event trigger");
+            // alert("document is loaded...");
+            let images = document.getElementsByTagName("img");
+             console.log(images);
+            var length = images.length; // images.length return size of the array 
+            console.log(length);
+            for(let index=0;index<length;index++)
+            {
+                images[index].addEventListener("mouseover",function(){
+                    document.getElementById(this.id).className = "zoomIn";
+                });
+                images[index].addEventListener("mouseout",function(){
+                    document.getElementById(this.id).className = "ZoomOut";
+                });
+            }
+        });
+
+        window.addEventListener('scroll', function () {
+            // Calculate the distance scrolled from the top
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            // Calculate the total height of the content
+            const totalHeight = document.documentElement.scrollHeight;
+
+            // Calculate the height of the viewport
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            // Check if the user has scrolled to the bottom
+            if (scrollTop + windowHeight >= totalHeight && count<=27) {
+                // You have reached the end of the page
+                console.log('End of scroll detected!');
+                document.getElementById('output').innerHTML +=  `<tr>
+                    <td><img id='image-${count}' src="https://picsum.photos/300?random=${count}" alt=""></td>
+                    <td><img  id='image-${count+1}' src="https://picsum.photos/300?random=${count + 1}" alt=""></td>
+                    <td><img id='image-${count+2}' src="https://picsum.photos/300?random=${count + 2}" alt=""></td>
+                    </tr>`;
+                    document.getElementById(`image-${count}`).addEventListener("mouseover",function(){
+                        document.getElementById(this.id).className = "zoomIn";
+                    });
+                    document.getElementById(`image-${count+1}`).addEventListener("mouseover",function(){
+                        document.getElementById(this.id).className = "zoomIn";
+                    });
+                    document.getElementById(`image-${count+2}`).addEventListener("mouseover",function(){
+                        document.getElementById(this.id).className = "zoomIn";
+                    });
+                    document.getElementById(`image-${count}`).addEventListener("mouseout",function(){
+                        document.getElementById(this.id).className = "ZoomOut";
+                    });
+                    document.getElementById(`image-${count+1}`).addEventListener("mouseout",function(){
+                        document.getElementById(this.id).className = "ZoomOut";
+                    });
+                    document.getElementById(`image-${count+2}`).addEventListener("mouseout",function(){
+                        document.getElementById(this.id).className = "ZoomOut";
+                    });
+                    count = count + 3;
+                // Perform actions you want when reaching the end of the page
+            }
+        });
+
+    </script>
+
+
+</body></html>
