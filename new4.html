@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- creat a function prectices  -->
+    <!--  function prectices and there types   -->
+  </body>
+  <script>
+    // (1) => Function Declaration Method :
+    // A function declaration defines a named function. This function can be called before it is defined in the code because of hoisting.
+
+    function Nayan() {
+      var name = "hello would ........!!!!"; //take input
+      alert(name); // store inpurt in name and alert box .
+      console.log(name);
+    }
+    Nayan(); // call the function
+
+
+
+    // (2) => Function Expression Method :
+    // A function expression defines a function inside an expression. It can be named or anonymous. It is not hoisted, so it can only be used after it is defined.
+
+    var rolex = function () {
+      var name = "hello Sweety .........!";
+      alert(name);
+      console.log(name);
+    };
+    rolex();
+
+
+
+    // (3) => Arrow Function Method :
+    // Arrow functions provide a shorter syntax and lexically bind the this value. They are always anonymous.
+
+    var rolex = () => {
+      var name = "hello dear .........!";
+      alert(name);
+      console.log(name);
+    };
+    rolex();
+
+
+
+    // (4) => Anonymous Function Method :
+    // An anonymous function is a function without a name. It is usually used as a callback or assigned to a variable.
+    // in bellow example we show one set time out function and 1000 mlsec to print in console so its only use for call back time ....
+
+    setTimeout(function () {
+      console.log("Hello from anonymous function!");
+    }, 1000);
+
+
+
+    // (5). Constructor Function Method :
+    // A constructor function is used to create objects. It is called using the new keyword.
+
+    function name(person) {
+      // creat function declaration function ..
+      this.person = person;
+    }
+    var name1 = new name(" Narayan"); // every time we call name be must have to give unqe name for call this.
+    console.log(name1.person);
+    var name2 = new name(" Vishnu ");
+    console.log(name2.person);
+
+
+
+    // (6). Immediately Invoked Function Expression (IIFE) :
+    // An IIFE is a function that is executed immediately after it is defined. This pattern is often used to create a private scope.
+    (function () {
+      console.log("Hello!");
+    })();
+
+    
+  </script>
+</html>

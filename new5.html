@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- we creat a one script for get getElementById use and we tack inpurt from user and chang the h1 tag in inpurt form  -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 id="message">your name : </h1>
+          <h1 id="mess">your surname :</h1>
+          <h1 id="me">your gender : </h1>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var name = prompt("enter your name ");
+      var surname = prompt("enter your surname ");
+      var gender = prompt("enter your gender ");
+      document.getElementById("message").innerHTML = "hello " + name;
+      document.getElementById("mess").innerHTML =  name + '' + surname;
+      document.getElementById("me").innerHTML = 'your gender ' + gender;
+
+      var data = document.getElementById("message").innerHTML;
+      var data1 = document.getElementById("mess").innerHTML;
+      var data2 = document.getElementById("me").innerHTML;
+      
+      console.log(data);
+      console.log(data1);
+      console.log(data2);
+    </script>
+  </body>
+</html>

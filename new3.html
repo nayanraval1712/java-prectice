@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- prompt  to take  input from clint in alert box   -->
+    <!-- prompt  to cheak age and condition to allow or not using coditional oprater   -->
+
+
+  </body>
+  <script>
+    var name = 'enter your name';
+    var surname = 'enter your surname';
+    var result1 = prompt(name);
+    var result2 = prompt(surname);
+   fullname = (result1 + result2);
+    alert('your full name is ! '  +   fullname)
+
+    var allow ='';
+    var age = prompt('how old you are ?...')
+    age= parseInt(age)
+
+    if(age>18)
+    {
+       allow ='allowed to use site '
+    }
+    else
+    {
+        allow = 'Not allowed to use site '
+    }
+    alert(allow)
+  </script>
+</html>
