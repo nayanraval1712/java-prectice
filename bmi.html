@@ -15,6 +15,7 @@
     <div class="container">
       <h1 align="center">Find BMI</h1>
       <hr class="offset-2" width="70%" />
+      
     </div>
 
     <script
@@ -58,16 +59,50 @@
       console.log(bmi);
 
       if (bmi <= 18.5) {
+        document.write(`<div class="col-6 offset-3">
+        <div class="card ">
+          <div class="card-heder text-center text-bg-warning">
+            <div class="h3">As per your BMI : You Are Unhelthy</div>
+          </div>
+        </div>
+      </div> `);
         console.log("its unhelthy");
-      }
-       else if (bmi >= 18.51 && bmi < 24.9) {
+      } else if (bmi >= 18.51 && bmi < 24.9) {
+        document.write(`<div class="col-6 offset-3">
+        <div class="card ">
+          <div class="card-heder text-center text-bg-success">
+            <div class="h3">As per your BMI : You Are Helthy</div>
+          </div>
+        </div>
+      </div> `);
         console.log("its helthy");
-      }
-      else if (bmi >= 25 && bmi < 29.9) {
+      } else if (bmi >= 25 && bmi < 29.9) {
+        document.write(`<div class="col-6 offset-3">
+        <div class="card ">
+          <div class="card-heder text-center text-bg-danger">
+            <div class="h3">As per your BMI : You Are OverWeight</div>
+          </div>
+        </div>
+      </div> `);
         console.log("its overweight");
-      }
-      else if (bmi >= 30) {
+      } else if (bmi >= 30) {
+        document.write(`<div class="col-6 offset-3">
+        <div class="card ">
+          <div class="card-heder text-center text-bg-danger">
+            <div class="h3">As per your BMI : You Are Obsence</div>
+          </div>
+        </div>
+      </div> `);
         console.log("its obsence");
+      }
+      else{
+        document.write(`<div class="col-6 offset-3">
+        <div class="card ">
+          <div class="card-heder text-center text-bg-dark">
+            <div class="h3">Enter Valid Inputs  </div>
+          </div>
+        </div>
+      </div> `);
       }
     </script>
   </body>
