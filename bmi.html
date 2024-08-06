@@ -15,7 +15,7 @@
     <div class="container">
       <h1 align="center">Find BMI</h1>
       <hr class="offset-2" width="70%" />
-      
+      <div id="chartContainer" style="height: 300px; width: 100%"></div>
     </div>
 
     <script
@@ -94,8 +94,7 @@
         </div>
       </div> `);
         console.log("its obsence");
-      }
-      else{
+      } else {
         document.write(`<div class="col-6 offset-3">
         <div class="card ">
           <div class="card-heder text-center text-bg-dark">
@@ -105,5 +104,39 @@
       </div> `);
       }
     </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var options = {
+          title: {
+            text: "BMI CHART",
+          },
+          data: [
+            {
+              type: "pie",
+              startAngle: 90,
+              showInLegend: "true",
+              legendText: "{label}",
+              indexLabel: "{label} ({y})",
+              yValueFormatString: "#,##0.#" % "",
+              dataPoints: [
+              { label: "Underweight", y: bmi <= 18.5 },
+                        { label: "Healthy", y: bmi >= 18.51 && bmi < 24.9  },
+                        { label: "Overweight", y: bmi >= 25 && bmi < 29.9 },
+                        { label: "Obese", y: bmi >= 30  }
+              ],
+            },
+          ],
+        };
+        $("#chartContainer").CanvasJSChart(options);
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"
+    ></script>
   </body>
 </html>
